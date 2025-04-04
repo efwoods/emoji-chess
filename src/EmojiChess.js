@@ -169,7 +169,17 @@ export default function EmojiChess() {
     } else {
       const pieceAtSquare = game.get(square);
       if (pieceAtSquare) {
-        setMessage(`Selected: ${pieceNames[pieceAtSquare.type]} (${square})`);
+        console.log("color: ", pieceAtSquare.color);
+        console.log("type: ", pieceAtSquare.type);
+        console.log(pieceNames[pieceAtSquare.type]);
+        if (pieceAtSquare.color === "w") {
+          var pieceKey = pieceAtSquare.type.toUpperCase();
+        } else {
+          var pieceKey = pieceAtSquare.type;
+        }
+
+        const pieceType = pieceNames[pieceKey];
+        setMessage(`Selected: ${pieceType} (${square})`);
       } else {
         setMessage(`Selected an empty square: ${square}`);
       }
