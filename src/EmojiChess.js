@@ -219,7 +219,7 @@ export default function EmojiChess() {
     <div className="flex flex-col items-center justify-center min-h-screen p-4">
       <strong>
         <strong className="text-2xl font-bold mb-4 !important">
-          Emoji Chess
+          Emoji 🤪 Chess
         </strong>
       </strong>
 
