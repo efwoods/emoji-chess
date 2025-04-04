@@ -49,6 +49,71 @@ const emojiOptions = [
   "🛡️",
   "🍄",
   "👑",
+  "🐌",
+  "🐜",
+  "🐛",
+  "🦗",
+  "🌻",
+  "🤪",
+  "😝",
+  "😻",
+  "🫣",
+  "😜",
+  "😵‍💫",
+  "🤩",
+  "😊",
+  "🥰",
+  "😸",
+  "🥴",
+  "😆",
+  "👽",
+  "🏄",
+  "🏄‍♂️",
+  "🐰",
+  "🐮",
+  "🐷",
+  "🐹",
+  "🦁",
+  "🦄",
+  "🐁",
+  "🐘",
+  "🐇",
+  "🐕",
+  "🐖",
+  "🐯",
+  "🐺",
+  "🐼",
+  "🦁",
+  "😨",
+  "😖",
+  "😯",
+  "😏",
+  "🤮",
+  "🤢",
+  "😵‍💫",
+  "😵‍💫",
+  "🥵",
+  "🥶",
+  "🤣",
+  "😆",
+  "😉",
+  "😇",
+  "😃",
+  "😁",
+  "😁",
+  "🦸‍♂️",
+  "🦸‍♀️",
+  "🦹‍♀️",
+  "🦹‍♂️",
+  "🧌",
+  "🧙‍♀️",
+  "🧞‍♂️",
+  "🧞‍♀️",
+  "🧟",
+  "🧟‍♂️",
+  "🧟‍♀️",
+  "🧝‍♂️",
+  "🧝‍♀️",
 ];
 
 export default function EmojiChess() {
@@ -153,6 +218,15 @@ export default function EmojiChess() {
         <strong>Current Player: {currentPlayer}</strong>
       </div>
 
+      {/* Selected piece info */}
+      <div className="mb-4">
+        {
+          <div>
+            <strong>{message}</strong>
+          </div>
+        }
+      </div>
+
       {/* Chessboard */}
       <div className="chessboard">
         {game.board().map((row, rowIndex) =>
@@ -180,14 +254,6 @@ export default function EmojiChess() {
         )}
       </div>
 
-      {/* Selected piece info */}
-      <div className="mb-4">
-        {
-          <div>
-            <strong>{message}</strong>
-          </div>
-        }
-      </div>
       {/* Emoji Dropdowns for pieces */}
       <div className="mt-6 flex flex-wrap gap-8 w-full max-w-3xl">
         {/* White Pieces Column */}
