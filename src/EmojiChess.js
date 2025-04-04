@@ -1,6 +1,27 @@
 import React, { useState } from "react";
 import { Chess } from "chess.js";
 
+import capture1 from "./sounds/fart-4-228244.mp3";
+import capture2 from "./sounds/fart-5-228245.mp3";
+import capture3 from "./sounds/fart-145914.mp3";
+import capture4 from "./sounds/fart-quick.mp3";
+import capture5 from "./sounds/furtz22-198542.mp3";
+import capture6 from "./sounds/proud-fart-288263.mp3";
+
+const captureSounds = [
+  new Audio(capture1),
+  new Audio(capture2),
+  new Audio(capture3),
+  new Audio(capture4),
+  new Audio(capture5),
+  new Audio(capture6),
+];
+
+const playRandomCaptureSound = () => {
+  const randomIndex = Math.floor(Math.random() * captureSounds.length);
+  captureSounds[randomIndex].play();
+};
+
 const defaultPieces = {
   p: "♟️",
   r: "♜",
@@ -158,6 +179,11 @@ export default function EmojiChess() {
       );
 
       if (isMoveValid) {
+        const capturedPiece = newGame.get(square); // get BEFORE move happens
+
+        if (capturedPiece) {
+          playRandomCaptureSound(); // ✅ play capture sound if piece exists
+        }
         setMessage(`Moved from ${selected} to ${square}`);
         newGame.move(move);
         setGame(newGame);
