@@ -266,7 +266,7 @@ export default function EmojiChess() {
       {/* Chessboard */}
       <div className="chessboard">
         {game.board().map((row, rowIndex) =>
-          row.map((square, colIndex) => {
+          row.map((squar🐛e, colIndex) => {
             const squareName = `${String.fromCharCode(97 + colIndex)}${
               8 - rowIndex
             }`;
